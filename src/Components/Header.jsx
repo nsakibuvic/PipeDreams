@@ -7,6 +7,9 @@ const HeaderContainer = styled.header`
   background-color: #fff;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const HeaderTitle = styled.h1`
@@ -16,7 +19,8 @@ const HeaderTitle = styled.h1`
 `;
 
 const HeaderNav = styled.nav`
-  margin-top: 8px;
+  display: flex;
+  align-items: center;
 `;
 
 const NavLink = styled(Link)`
