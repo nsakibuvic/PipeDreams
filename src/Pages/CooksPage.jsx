@@ -29,9 +29,7 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 			<Header title="Cooks" />
 			<PageContainer>
 			<h1>Cooks</h1>
-			<h2>{day}</h2>
-			{/* Display cooks list for the specific day */}
-			{/* Replace this with your actual implementation */}
+			<h2>{day}</h2>		
 			<ul>
 				<li>Cook 1</li>
 				<li>Cook 2</li>

@@ -1,3 +1,4 @@
+// Function to disable button
 export const buttonDisable = (day) => {
 	if (day === "Monday") {
 		return "prev";

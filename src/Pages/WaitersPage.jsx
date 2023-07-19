@@ -16,8 +16,6 @@ const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 			<PageContainer>
 			<h1>Waiters</h1>
 			<h2>{day}</h2>
-			{/* Display waiters list for the specific day */}
-			{/* Replace this with your actual implementation */}
 			<ul>
 				<li>Waiter 1</li>
 				<li>Waiter 2</li>
