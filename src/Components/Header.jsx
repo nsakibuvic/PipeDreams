@@ -1,4 +1,3 @@
-// Header.js
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -27,18 +26,19 @@ const NavLink = styled(Link)`
   margin-right: 16px;
   text-decoration: none;
   color: #333;
-  font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+  font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
 `;
 
 const Header = ({ title }) => {
+
   return (
     <HeaderContainer>
       <HeaderTitle>{title}</HeaderTitle>
       <HeaderNav>
-        <NavLink to="/cooks" isActive={title === 'Cooks'}>
+        <NavLink to="/cooks" active={`${title === 'Cooks'}`}>
           Cooks
         </NavLink>
-        <NavLink to="/waiters" isActive={title === 'Waiters'}>
+        <NavLink to="/waiters" active={`${title === 'Waiters'}`}>
           Waiters
         </NavLink>
       </HeaderNav>
