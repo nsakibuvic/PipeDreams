@@ -10,7 +10,7 @@ import CooksPage from "./Pages/CooksPage";
 import WaitersPage from "./Pages/WaitersPage";
 
 const App = () => {
-	const [day, setDay] = useState("Monday"); // Default day is Monday for demonstration
+	const [day, setDay] = useState("monday"); // Default day is Monday for demonstration
 
 	useEffect(() => {
 		// Retrieve the saved day from local storage
