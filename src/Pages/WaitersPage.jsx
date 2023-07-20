@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import Button from "../Components/Button";
 import { buttonDisable } from "../Utils/button-disable-logic";
 import { PageContainer, ButtonContainer } from "./CooksPage";
+import { capitalizeFirstLetter } from "../Utils/capitalize-first-letter";
 
 const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 	//    Created a reusable Button Component
@@ -15,7 +16,7 @@ const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 			<Header title="Waiters" />
 			<PageContainer>
 			<h1>Waiters</h1>
-			<h2>{day}</h2>
+			<h2>{capitalizeFirstLetter(day)}</h2>
 			<ul>
 				<li>Waiter 1</li>
 				<li>Waiter 2</li>

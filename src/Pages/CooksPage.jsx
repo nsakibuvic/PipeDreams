@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from "../Components/Header";
 import Button from "../Components/Button";
 import { buttonDisable } from "../Utils/button-disable-logic";
+import { capitalizeFirstLetter } from "../Utils/capitalize-first-letter";
 
 export const PageContainer = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 			<Header title="Cooks" />
 			<PageContainer>
 			<h1>Cooks</h1>
-			<h2>{day}</h2>		
+			<h2>{capitalizeFirstLetter(day)}</h2>		
 			<ul>
 				<li>Cook 1</li>
 				<li>Cook 2</li>
