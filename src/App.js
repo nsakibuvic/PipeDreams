@@ -23,7 +23,7 @@ const App = () => {
 	const handlePrevDay = () => {
 		// Logic to handle previous day
 		// Ensured that day does not go below Monday		
-		if (day === "Monday") return;
+		if (day === "monday") return;
 		const prevDay = getAdjacentDay(day, "previous");
 		setDay(prevDay);
 		// Save the updated day to local storage
@@ -33,7 +33,7 @@ const App = () => {
 	const handleNextDay = () => {
 		// Logic to handle next day
 		// Ensure day does not go beyond Friday		
-		if (day === "Friday") return;
+		if (day === "friday") return;
 		const nextDay = getAdjacentDay(day, "next");
 		setDay(nextDay);
 		// Save the updated day to local storage
