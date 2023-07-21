@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -26,19 +27,20 @@ const NavLink = styled(Link)`
   margin-right: 16px;
   text-decoration: none;
   color: #333;
-  font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
+  font-weight: ${props => props.$isActive ? 'bold' : 'normal'};
 `;
 
-const Header = ({ title }) => {
+const Header = () => {
+  const location = useLocation();
 
   return (
     <HeaderContainer>
-      <HeaderTitle>{title}</HeaderTitle>
+      <HeaderTitle>Menu</HeaderTitle>
       <HeaderNav>
-        <NavLink to="/cooks" active={`${title === 'Cooks'}`}>
+        <NavLink to="/cooks" $isActive={location.pathname === "/cooks"}>
           Cooks
         </NavLink>
-        <NavLink to="/waiters" active={`${title === 'Waiters'}`}>
+        <NavLink to="/waiters" $isActive={location.pathname === "/waiters"}>
           Waiters
         </NavLink>
       </HeaderNav>

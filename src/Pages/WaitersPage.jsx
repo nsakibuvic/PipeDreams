@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Components/Button";
 import { buttonDisable } from "../Utils/button-disable-logic";
-import { PageContainer, ButtonContainer } from "./CooksPage";
+import { StyledPageContainer, StyledButtonContainer, StyledUl } from "./CooksPage";
 import { capitalizeFirstLetter } from "../Utils/capitalize-first-letter";
 import useHttp from "../Hooks/useHttp";
 
@@ -22,15 +22,15 @@ const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 	}
 	return (
 		<>			
-			<PageContainer>
+			<StyledPageContainer>
 				<h1>Waiters</h1>
 				<h2>{capitalizeFirstLetter(day)}</h2>
-				<ul>
+				<StyledUl>
 					{waiters?.map((waiter, index) => (
 						<li key={index}>{waiter}</li>
 					))}
-				</ul>
-				<ButtonContainer>
+				</StyledUl>
+				<StyledButtonContainer>
 					<Button
 						title="Prev"
 						eventHandler={handlePrevDay}
@@ -41,8 +41,8 @@ const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 						eventHandler={handleNextDay}
 						disabled={disableButton === "next"}
 					/>
-				</ButtonContainer>
-			</PageContainer>
+				</StyledButtonContainer>
+			</StyledPageContainer>
 		</>
 	);
 };

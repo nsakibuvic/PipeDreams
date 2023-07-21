@@ -6,7 +6,7 @@ import { buttonDisable } from "../Utils/button-disable-logic";
 import { capitalizeFirstLetter } from "../Utils/capitalize-first-letter";
 import useHttp from "../Hooks/useHttp";
 
-export const PageContainer = styled.div`
+export const StyledPageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -15,9 +15,12 @@ export const PageContainer = styled.div`
 	font-family: "Roboto", sans-serif;
 `;
 
-export const ButtonContainer = styled.div`
+export const StyledButtonContainer = styled.div`
 	display: flex;
 	gap: 10px;
+`;
+export const StyledUl = styled.ul`
+	margin-bottom: 40px;
 `;
 
 const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
@@ -32,23 +35,23 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 	if (isLoading) {
 		return <div>Loading...</div>; // Show a loading message while waiting for the response
 	}
-	
+
 	// Created a Error message to give the User that there is an error
 	if (error) {
 		return <div>{error}</div>; // Show "Failed to Load Data" message in case of an error
 	}
 
 	return (
-		<>			
-			<PageContainer>
+		<>
+			<StyledPageContainer>
 				<h1>Cooks</h1>
 				<h2>{capitalizeFirstLetter(day)}</h2>
-				<ul>
+				<StyledUl>
 					{cooks?.map((waiter, index) => (
 						<li key={index}>{waiter}</li>
 					))}
-				</ul>
-				<ButtonContainer>
+				</StyledUl>
+				<StyledButtonContainer>
 					<Button
 						title="Prev"
 						eventHandler={handlePrevDay}
@@ -59,8 +62,8 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 						eventHandler={handleNextDay}
 						disabled={disableButton === "next"}
 					/>
-				</ButtonContainer>
-			</PageContainer>
+				</StyledButtonContainer>
+			</StyledPageContainer>
 		</>
 	);
 };
