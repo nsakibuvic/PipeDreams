@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Components/Header";
 import Button from "../Components/Button";
 import { buttonDisable } from "../Utils/button-disable-logic";
 import { PageContainer, ButtonContainer } from "./CooksPage";
@@ -22,13 +21,12 @@ const WaitersPage = ({ day, handleNextDay, handlePrevDay }) => {
 		return <div>{error}</div>; // Show "Failed to Load Data" message in case of an error
 	}
 	return (
-		<>
-			<Header title="Waiters" />
+		<>			
 			<PageContainer>
 				<h1>Waiters</h1>
 				<h2>{capitalizeFirstLetter(day)}</h2>
 				<ul>
-					{waiters.map((waiter, index) => (
+					{waiters?.map((waiter, index) => (
 						<li key={index}>{waiter}</li>
 					))}
 				</ul>

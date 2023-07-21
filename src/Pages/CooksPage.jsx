@@ -1,7 +1,6 @@
 // CooksPage.js
 import React from "react";
 import styled from "styled-components";
-import Header from "../Components/Header";
 import Button from "../Components/Button";
 import { buttonDisable } from "../Utils/button-disable-logic";
 import { capitalizeFirstLetter } from "../Utils/capitalize-first-letter";
@@ -40,13 +39,12 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 	}
 
 	return (
-		<>
-			<Header title="Cooks" />
+		<>			
 			<PageContainer>
 				<h1>Cooks</h1>
 				<h2>{capitalizeFirstLetter(day)}</h2>
 				<ul>
-					{cooks.map((waiter, index) => (
+					{cooks?.map((waiter, index) => (
 						<li key={index}>{waiter}</li>
 					))}
 				</ul>

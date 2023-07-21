@@ -8,6 +8,7 @@ import {
 import { getAdjacentDay } from "./Utils/get-days-method";
 import CooksPage from "./Pages/CooksPage";
 import WaitersPage from "./Pages/WaitersPage";
+import Header from "./Components/Header"
 
 const App = () => {
 	const [day, setDay] = useState("monday"); // Default day is Monday for demonstration
@@ -42,6 +43,7 @@ const App = () => {
 
 	return (
 		<Router>
+			<Header title="Staff" />
 			<Routes>
 				<Route
 					path="/cooks"
