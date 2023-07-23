@@ -7,10 +7,13 @@ const useHttp = (url, day) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Abort function to stop memory leaks if use moves too fast through the days
+    const abortController = new AbortController();
     // Function to fetch data from the backend API
-    const fetchData = async () => {
+    const fetchData = async () => {      
       try {
-        const response = await fetch(url);
+        // Increased Efficiency due to reduced memory leaks
+        const response = await fetch(url, { signal: abortController.signal });
         if (!response.ok) {
           throw new Error("Failed to fetch data from the server");
         }
@@ -18,12 +21,18 @@ const useHttp = (url, day) => {
         setData(data[0][day]);
         setIsLoading(false);
       } catch (error) {
-        setError("Failed to Load Data");
-        setIsLoading(false);
+        if (!error.name === 'AbortError') {
+          setError("Failed to Load Data");
+          setIsLoading(false);
+        } 
       }
     };
 
     fetchData();
+
+    return () => {
+      abortController.abort();
+    };
   }, [url, day]);
 
   return { data, isLoading, error };
