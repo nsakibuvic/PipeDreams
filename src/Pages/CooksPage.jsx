@@ -47,8 +47,8 @@ const CooksPage = ({ day, handleNextDay, handlePrevDay }) => {
 				<h1>Cooks</h1>
 				<h2>{capitalizeFirstLetter(day)}</h2>
 				<StyledUl>
-					{cooks?.map((waiter, index) => (
-						<li key={index}>{waiter}</li>
+					{cooks?.map((cook, index) => (
+						<li key={index}>{cook}</li>
 					))}
 				</StyledUl>
 				<StyledButtonContainer>
